@@ -4,7 +4,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/com
 import { cn } from '@/lib/utils';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
-
+import { FaCoins } from 'react-icons/fa';
 interface SentenceConstructionProps {
     timePerQuestion?: number;
     totalQuestions?: number;
@@ -30,8 +30,8 @@ const SentenceConstruction: React.FC<SentenceConstructionProps> = ({
             >
                 <Card
                     className={cn(
-                        "bg-white/5 backdrop-blur-lg border border-white/10",
-                        "shadow-2xl rounded-3xl",
+                        "bg-white/5  ",
+                      
                         "p-6 space-y-6"
                     )}
                 >
@@ -39,7 +39,7 @@ const SentenceConstruction: React.FC<SentenceConstructionProps> = ({
                         <CardTitle className={cn(
                             "text-3xl sm:text-4xl font-bold",
                             " text-gray-800 bg-clip-text",
-                            "drop-shadow-lg"
+                            ""
                         )}>
                             Sentence Construction
                         </CardTitle>
@@ -67,12 +67,14 @@ const SentenceConstruction: React.FC<SentenceConstructionProps> = ({
                             <div>
                                 <div className="font-semibold">Coins</div>
                                 <div className="flex items-center justify-center gap-1">
+                                <FaCoins className="text-yellow-500 text-2xl" />
                                     <span>{coins}</span>
-                                    {/* You can add a coin icon here, if you have one. */}
+                                   
                                 </div>
                             </div>
                         </div>
-                        <div className="flex flex-col sm:flex-row gap-4">
+                        <div className="flex flex-col sm:flex-row  justify-between">
+                            <Link to="/" >
                             <Button
                                 variant="outline"
                                 onClick={onBack}
@@ -85,7 +87,8 @@ const SentenceConstruction: React.FC<SentenceConstructionProps> = ({
                             >
                                 Back
                             </Button>
-                            <Link to="/quizpage">
+                            </Link>
+                            <Link to="/quizpage" >
                             <Button
                                 onClick={onStart}
                                 className={cn(

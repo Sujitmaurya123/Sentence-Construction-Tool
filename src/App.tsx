@@ -11,12 +11,10 @@ import SentenceConstruction from './components/Home-section/Hero';
 
 function App() {
  
-
+// Router make
   return (
     <>
       <Navbar/>
-      {/* <SentenceConstruction/>
-      <SentenceQuiz/> */}
       <Router>
         <Routes>
           <Route path="/" element={<SentenceConstruction />} />
